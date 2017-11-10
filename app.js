@@ -47,7 +47,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+    var someArr = sum (a,b);
+    var answers = [];
+    someArr = sum (someArr[0], c);
+    answers.push (someArr[0]);
+    someArr = multiply (a,b);
+    someArr = multiply (someArr[0], c);
+    answers.push (someArr[0]);
+    answers.push (a + ' and ' + b + ' and ' + c + ' sum to ' + answers[0] + '.');
+    answers.push ('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answers[1] + '.');
+    return answers;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
