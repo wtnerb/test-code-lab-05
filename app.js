@@ -95,14 +95,23 @@ function sumArray(testArray){ //eslint-disable-line
 
 /////////////////////////////////////
 /* Problem 5
-Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element xis the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 "The numbers 2,3,4 have a product of 24."
 IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-
+  var answers = [1, 'The numbers '];
+  for (var i = 0; i < testArray.length; i++){
+    answers[0] = multiply(answers[0], testArray[i])[0];
+    answers[1] += testArray[i];
+    if (i < testArray.length - 1){
+      answers[1] += ',';
+    }
+  }
+  answers[1] += (' have a product of ' + answers[0] + '.');
+  return answers;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
